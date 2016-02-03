@@ -5,8 +5,15 @@
     right: 0;
 
 }
-.btn-floating{
-    bottom: 70px;
-    position: absolute;
-    position: fixed;
+
+
+ul li a{
+    color: black;
+}
+nav a {
+    color: black;
+}
+.nav-wrapper a{
+    color: black;
+
 }
