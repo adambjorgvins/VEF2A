@@ -1,0 +1,44 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+body{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #263238;
+}
+
+
+ul li a{
+    color: black;
+}
+nav a {
+    color: black;
+}
+.nav-wrapper a{
+    color: black;
+
+}
+
+.page-footer{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.random-image{
+    min-width:100%;
+}
+
+.textabout{
+    color: white;
+}
+.currentPage{
+        background-color: yellowgreen;
+}
