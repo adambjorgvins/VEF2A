@@ -9,7 +9,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.php" <?php if ($currentPage == 'index.php') {echo 'class="currentPage"';} ?> >Home</a></li>
                 <li><a href="photos.php" <?php if ($currentPage == 'photos.php') {echo 'class="currentPage"';} ?> >Photos</a></li>
-                <li><a href="signin.php" <?php if ($currentPage == 'signin.php') {echo 'class="currentPage"';} ?> >Sing In</a></li>
+                <li><a href="signin.php" <?php if ($currentPage == 'signin.php') {echo 'class="currentPage"';} ?> >Sign In</a></li>
                 <li><a href="register.php" <?php if ($currentPage == 'register.php') {echo 'class="currentPage"';} ?> >Register</a></li>
 
 
