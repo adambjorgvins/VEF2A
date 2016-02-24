@@ -16,7 +16,7 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="row white-text">
         <form action="register.php" method="post" class="col s12">
 
             <div class="row">
@@ -31,21 +31,29 @@
             </div>
 
             <div class="row">
-                <div class="col s12">
+                <div class="input-field col s6">
                     <select>
                         <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="1">In what year was your father born?</option>
+                        <option value="2">What was the name of your elementary / primary school?</option>
+                        <option value="3">What time of the day were you born? (hh:mm)</option>
                     </select>
-                    <label>Materialize Select</label>
+                    <label>Security Questions</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="email" type="text" class="validate">
+                    <label  for="email">Answer</label>
                 </div>
             </div>
-
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                 <div class="input-field col s6">
+                    <input id="mainPassword" type="password" class="js_password_check validate">
+                    <label for="mainPassword">Password</label>
+                 </div>
+                <div class="input-field col s6">
+                    <input id="retypePassword" type="password" class="js_password_check validate">
+                    <label for="retypePassword">Password again</label>
                 </div>
             </div>
 
@@ -82,4 +90,6 @@
 
 <?php include 'include/footer.php'; ?>
 </body>
+
+
 </html>
