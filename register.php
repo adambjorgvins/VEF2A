@@ -17,7 +17,7 @@
 
 <div class="container">
     <div class="row white-text">
-        <form action="register.php" method="post" class="col s12">
+        <form action="signin.php" method="post" class="col s12">
 
             <div class="row">
                 <div class="input-field col s6">

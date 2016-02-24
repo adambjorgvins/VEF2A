@@ -13,8 +13,8 @@ $db = new database();
     <body style="background-image: url('<?php echo $db->getRandomImageUrl() ?>')">
 
 
-
         <?php include 'include/header.php'; ?>
+
 
         <div class="content">
 

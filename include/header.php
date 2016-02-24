@@ -3,7 +3,7 @@
 <nav>
     <div class="nav-wrapper">
         <div class="container">
-            <a href="index.php" class="brand-logo">Logo</a>
+            <a href="index.php"><img class="logo" src="img/logo.png" alt=""></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <?php $currentPage = basename($_SERVER['SCRIPT_FILENAME']); ?>
             <ul class="right hide-on-med-and-down">
@@ -22,3 +22,4 @@
         </ul>
     </div>
 </nav>
+
