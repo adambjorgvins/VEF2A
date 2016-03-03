@@ -1,9 +1,42 @@
+<?php
+require_once('include/User.php');
+
+$user = new User();
+
+    if(
+        isset($_POST["first_name"]) and
+        isset($_POST["first_name"]) and
+        isset($_POST["first_name"])){
+
+    }
+
+
+
+    $first="";
+    if (isset($_POST["first_name"])){
+        $first = $_POST["first_name"];
+    }
+
+
+ if (isset($_POST["last_name"])){
+     header('Location: '.'signin.php');
+ }
+
+
+    echo "hello";
+    echo ($_POST["last_name"]);
+    echo "hello";
+
+?>
+
+
+
+
 <html>
 <head><?php include 'include/assets.php'; ?></head>
 <body>
 
 <?php include 'include/header.php'; ?>
-
 
 <div class="container">
     <div class="row">
@@ -17,7 +50,7 @@
 
 <div class="container">
     <div class="row white-text">
-        <form action="signin.php" method="post" class="col s12">
+        <form action="register.php" method="post" class="col s12">
 
             <div class="row">
                 <div class="input-field col s6">
