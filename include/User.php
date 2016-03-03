@@ -13,14 +13,13 @@ class User
     }
     function register ($first_name,$last_name,$fist_pass,$sec_pass)
     {
+
         try {
 
-
+        }
+        catch(Exception $e){
 
         }
-        catch{
-
-        }
-
+        return true;
     }
 }

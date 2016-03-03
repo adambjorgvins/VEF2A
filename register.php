@@ -1,31 +1,34 @@
 <?php
 require_once('include/User.php');
 
-$user = new User();
+if(
+    isset($_POST["first_name"]) and
+    isset($_POST["last_name"]) and
+    isset($_POST["password"])){
 
-    if(
-        isset($_POST["first_name"]) and
-        isset($_POST["first_name"]) and
-        isset($_POST["first_name"])){
+    $email = $_POST['email'];
+    $first = $_POST["first_name"];
+    $last = $_POST["last_name"];
+    $mainPass = $_POST["mainPassword"];
+    $retypePassword = $_POST['retypePassword'];
+    $question = $_POST['quest'];
+    $answer = $_POST['ans'];
 
+    $user = new User();
+    $registerOk = $user->register($email,$first,$last,$mainPass,$retypePassword,$question,$answer);
+    if($registerOk){
+        header('Location: '.'signin.php');
     }
-
-
-
-    $first="";
-    if (isset($_POST["first_name"])){
-        $first = $_POST["first_name"];
+/*
+    if (isset($_POST["last_name"])){
+        header('Location: '.'signin.php');
     }
-
-
- if (isset($_POST["last_name"])){
-     header('Location: '.'signin.php');
- }
-
+*/
 
     echo "hello";
     echo ($_POST["last_name"]);
     echo "hello";
+}
 
 ?>
 
@@ -65,7 +68,7 @@ $user = new User();
 
             <div class="row">
                 <div class="input-field col s6">
-                    <select>
+                    <select name="quest" >
                         <option value="" disabled selected>Choose your option</option>
                         <option value="1">In what year was your father born?</option>
                         <option value="2">What was the name of your elementary / primary school?</option>
@@ -75,8 +78,8 @@ $user = new User();
                 </div>
 
                 <div class="input-field col s6">
-                    <input id="email" type="text" class="validate">
-                    <label  for="email">Answer</label>
+                    <input id="ans" type="text" name="ans" class="validate">
+                    <label  for="ans">Answer</label>
                 </div>
             </div>
             <div class="row">
@@ -85,7 +88,7 @@ $user = new User();
                     <label for="mainPassword">Password</label>
                  </div>
                 <div class="input-field col s6">
-                    <input id="retypePassword" type="password" class="js_password_check validate">
+                    <input  id="retypePassword" type="password" name="retypePassword" class="js_password_check validate">
                     <label for="retypePassword">Password again</label>
                 </div>
             </div>
@@ -97,14 +100,6 @@ $user = new User();
                 </div>
             </div>
 
-            <?php
-            $errors = [];
-            $missing = [];
-            // check if the form has been submitted
-            if (isset($_POST['send'])) {
-                // email processing script
-            }
-            ?>
 
 
             <div class="row">
