@@ -2,6 +2,7 @@
 <head><?php include 'include/assets.php'; ?></head>
 <body>
 
+
 <?php include 'include/header.php'; ?>
 
 <?php
@@ -26,7 +27,15 @@ $db = new database();
             </div>
         </div>
     </div>
+    <form action="photos.php" method="post">
+        <input type="file">
 
+        <input type="submit">
+        
+        
+    </form>
+     
+    
 
         <div class="row">
             <div class="col s3">
