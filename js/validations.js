@@ -1,7 +1,7 @@
 /**
  * Created by AdamB on 24.2.2016.
  */
-
+/**
 
 $('.js_password_check').blur(function(){
     var mainPassword = $('#mainPassword').val().trim()
@@ -32,3 +32,13 @@ $('.js_password_check').blur(function(){
     }
 
 });
+*/
+
+$('.js_missing_validation').on('blur',function(e){
+    var input = $(e.currentTarget)
+    if(input.val() === '') {
+        input.next('span').removeClass('hidden')
+    } else if(!input.next('span').hasClass('hidden')) {
+        input.next('span').addClass('hidden')
+    }
+})

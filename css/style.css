@@ -43,6 +43,10 @@ nav a {
     background-color: yellowgreen;
 }
 
-.logo{
-    margin:;-top: 2px;
+.warning{
+    color: darkred;
+    font-size: 13px;
+}
+.hidden{
+    display:none;
 }
