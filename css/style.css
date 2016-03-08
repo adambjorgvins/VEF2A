@@ -10,7 +10,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: #263238;
+    background-color: #BBDEFB;
 }
 
 
@@ -40,7 +40,7 @@ nav a {
     color: white;
 }
 .currentPage{
-    background-color: yellowgreen;
+    background-color: wheat;
 }
 
 .warning{
