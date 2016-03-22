@@ -1,4 +1,5 @@
 <?php
+session_start();
 // ef til dæmis lykilorð er ekki með hástaf eða lágstaf
 // þá getum við sett inn villu í þennan array
 $errors = [];
@@ -9,24 +10,24 @@ if(isset($_POST['action'])){
     $required = $expected;
 
     require 'include/process.php';
-
     if (!($missing || $errors)){
+
         // the form was posted (user pressed submit)
         $login_email = $_POST['login_email'];
         $login_password = $_POST["login_password"];
 
-
         $user = new User();
-        $registerOk = $user->register($login_email,$login_password);
-        if($registerOk){
-            header('Location: '.'signin.php');
+        $loginOk = $user->login($login_email,$login_password);
+        if($loginOk){
+            $_SESSION["user"] = $user;
+            header('Location: '.'photos.php');
         }
     }
 }
 
 ?>
 
-
+<!DOCTYPE HTML>
 <html>
 <head><?php include 'include/assets.php'; ?></head>
 <body>
@@ -43,7 +44,7 @@ if(isset($_POST['action'])){
 
 <div class="container">
     <div class="row">
-        <form action="photos.php">
+        <form action="signin.php" method="post">
 
 
             <div class="row">

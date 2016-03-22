@@ -1,4 +1,10 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE HTML>
 <html>
+
 <head>
 
     <?php include 'include/assets.php'; ?></head>

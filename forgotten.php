@@ -1,4 +1,5 @@
 <?php
+session_start();
 // ef til dæmis lykilorð er ekki með hástaf eða lágstaf
 // þá getum við sett inn villu í þennan array
 $errors = [];
@@ -26,7 +27,7 @@ if(isset($_POST['action'])){
 
 ?>
 
-
+<!DOCTYPE HTML>
 <html>
 <head><?php include 'include/assets.php'; ?></head>
 <body>
