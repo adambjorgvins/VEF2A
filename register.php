@@ -11,7 +11,9 @@ if(isset($_POST['action'])){
 
     require 'include/process.php';
 
-    if (!($missing || $errors)){
+    if($missing || $errors){
+        // villur eru skrifaðar út fyrir neðan
+    } else {
         // the form was posted (user pressed submit)
         $email = $_POST['email'];
         $first = $_POST["first_name"];

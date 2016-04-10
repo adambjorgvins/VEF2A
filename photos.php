@@ -1,15 +1,28 @@
 
 <?php
+require_once('include/User.php');
 session_start();
-
 use File\Upload; # declaration, so you can refer to the class as Upload rather than using the fully qualified name
 $file_url = null;
+
+$u = $_SESSION['user'];
+$us = json_encode($u);
+echo "</br>";
+echo $us;
+echo "</br>";
+$usu = json_decode($us);
+echo "</br>";
+echo $usu->email;
+echo "</br>";
+
 if (isset($_POST['upload'])) {
-
-
     // define the path to the upload folder (DOCUMENT_ROOT er /var/www/adambjorgvins.com/public_html á servernum)
     // destination verður "/var/www/adambjorgvins.com/public_html/upload/images/"
-    $server_path_to_upload_folder = $_SERVER['DOCUMENT_ROOT'] . "/upload/images/";  # Þú þarft að breyta slóð.
+    $server_path_to_upload_folder = $_SERVER['DOCUMENT_ROOT'] . "/upload/images/" . $u->email . "/";  # Þú þarft að breyta slóð.
+    if (!file_exists($server_path_to_upload_folder)) {
+        mkdir($server_path_to_upload_folder);
+    }
+
     // svo við getum notað class með t.d. move() fallið og getMessage() ogsfrv...
     require_once 'include/Upload.php';
     // Because the object might throw an exception
@@ -17,7 +30,7 @@ if (isset($_POST['upload'])) {
         // búum til upload object til notkunar.  Sendum argument eða slóðina að upload möppunni sem á að geyma skrá
         $loader = new Upload($server_path_to_upload_folder);
         // köllum á og notum move() fallið sem færir skrá í upload möppu, þurfum að gera þetta strax.
-        $file_url = "/upload/images/" . $loader->upload();
+        $file_url = "/upload/images/" . $u->email . "/" . $loader->upload();
         // köllum á getMessage til að fá skilaboð (error or not).
         $result = $loader->getMessages();
 
